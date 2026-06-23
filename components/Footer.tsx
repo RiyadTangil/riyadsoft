@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { Globe, Shield, Heart } from "lucide-react"
+import { Globe, Heart } from "lucide-react"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -15,58 +15,58 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative bg-[#02050c] border-t border-white/5 py-16 overflow-hidden">
-      <div className="container relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+    <footer className="footer-section">
+      <div className="container relative-z">
+        <div className="footer-grid">
           {/* Logo & Description */}
-          <div className="md:col-span-5 space-y-4">
-            <a href="#" className="flex items-center gap-2 font-display text-2xl font-black tracking-tight text-white">
-              <span className="bg-gradient-to-r from-white to-[#4099D9] bg-clip-text text-transparent">Riyad</span>
-              <span className="text-[#005CC1]">Soft</span>
+          <div className="footer-col-main">
+            <a href="#" className="footer-logo">
+              <span className="logo-brand">Riyad</span>
+              <span className="logo-accent">Soft</span>
             </a>
-            <p className="text-xs sm:text-sm text-slate-400 font-medium leading-relaxed max-w-sm">
+            <p className="footer-desc">
               RiyadSoft is an enterprise-grade software product studio. We specialize in custom web portals, 
               scalable SaaS tools, mobile apps, and robust cloud configurations.
             </p>
           </div>
 
           {/* Quick Navigation links */}
-          <div className="md:col-span-3 space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#00f0ff]">
+          <div className="footer-col-nav">
+            <h4 className="footer-title">
               Company
             </h4>
-            <div className="flex flex-col gap-2.5">
-              <a href="#services" onClick={(e) => handleScrollTo(e, "#services")} className="text-xs sm:text-sm text-slate-400 hover:text-white font-medium transition-colors">
+            <div className="footer-links-list">
+              <a href="#services" onClick={(e) => handleScrollTo(e, "#services")} className="footer-link-item">
                 Our IT Services
               </a>
-              <a href="#products" onClick={(e) => handleScrollTo(e, "#products")} className="text-xs sm:text-sm text-slate-400 hover:text-white font-medium transition-colors">
+              <a href="#products" onClick={(e) => handleScrollTo(e, "#products")} className="footer-link-item">
                 SaaS Products
               </a>
-              <a href="#tech-stack" onClick={(e) => handleScrollTo(e, "#tech-stack")} className="text-xs sm:text-sm text-slate-400 hover:text-white font-medium transition-colors">
+              <a href="#tech-stack" onClick={(e) => handleScrollTo(e, "#tech-stack")} className="footer-link-item">
                 Technology Stack
               </a>
-              <a href="#contact" onClick={(e) => handleScrollTo(e, "#contact")} className="text-xs sm:text-sm text-slate-400 hover:text-white font-medium transition-colors">
+              <a href="#contact" onClick={(e) => handleScrollTo(e, "#contact")} className="footer-link-item">
                 Contact Inquiry
               </a>
             </div>
           </div>
 
           {/* Products Quick Links */}
-          <div className="md:col-span-4 space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#00f0ff]">
+          <div className="footer-col-prod">
+            <h4 className="footer-title">
               Featured Products
             </h4>
-            <div className="flex flex-col gap-2.5">
+            <div className="footer-links-list">
               <a 
                 href="https://travelhisab.com/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-slate-400 hover:text-white font-medium transition-colors"
+                className="footer-prod-row hover-color"
               >
-                <Globe className="h-4 w-4 text-[#4099D9]" />
+                <Globe size={16} className="text-[#4099D9] prod-globe-icon" />
                 Travel Hisab (travelhisab.com)
               </a>
-              <p className="text-xs text-slate-500 font-medium leading-relaxed max-w-xs">
+              <p className="footer-prod-label">
                 The flagship SaaS billing &amp; accounting solution built for 500+ travel agencies.
               </p>
             </div>
@@ -74,12 +74,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom copyright details */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[11px] sm:text-xs text-slate-500 font-semibold flex items-center gap-1">
+        <div className="footer-bottom">
+          <p className="footer-copyright">
             &copy; {currentYear} RiyadSoft. All rights reserved.
           </p>
-          <p className="text-[11px] sm:text-xs text-slate-500 font-semibold flex items-center gap-1">
-            Made with <Heart className="h-3 w-3 text-red-500 fill-red-500" /> for SaaS Excellence
+          <p className="footer-love">
+            Made with <Heart size={12} className="heart-icon" /> for SaaS Excellence
           </p>
         </div>
       </div>

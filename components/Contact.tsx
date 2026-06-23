@@ -42,61 +42,61 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="relative py-24 border-t border-white/5 bg-[#030712] overflow-hidden">
+    <section id="contact" className="contact-section">
       {/* Glow Backdrops */}
-      <div className="absolute top-1/4 left-1/2 w-[350px] h-[350px] rounded-full bg-[#005cc1]/5 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[250px] h-[250px] rounded-full bg-[#00f0ff]/5 blur-[90px] pointer-events-none" />
+      <div className="glow-sphere contact-glow-top" />
+      <div className="glow-sphere contact-glow-bottom" />
 
-      <div className="container relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div className="container relative-z">
+        <div className="contact-container-grid">
           {/* Info Column */}
-          <div className="lg:col-span-5 space-y-8 flex flex-col justify-between">
-            <div className="space-y-6">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#00f0ff] block">
+          <div className="contact-info-panel">
+            <div className="contact-info-header">
+              <span className="section-tag text-[#00f0ff]">
                 Get in Touch
               </span>
-              <h2 className="text-3xl sm:text-5xl font-extrabold text-white leading-none">
+              <h2 className="contact-info-title">
                 Let's Partner Up
               </h2>
-              <p className="text-sm sm:text-base text-slate-400 font-medium leading-relaxed">
+              <p className="contact-info-desc">
                 Have a project idea or need custom software developed? Drop us a line! 
                 Our experts will analyze your specifications and build a production-ready roadmap.
               </p>
             </div>
 
             {/* Structured Contact Details */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="w-11 h-11 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#4099D9]">
-                  <Mail className="h-5 w-5" />
+            <div className="contact-details-list">
+              <div className="contact-detail-row">
+                <div className="contact-detail-icon border-[#4099D9]/20 text-[#4099D9]">
+                  <Mail size={20} />
                 </div>
-                <div>
-                  <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">Email Us</p>
-                  <a href="mailto:info@riyadsoft.com" className="text-sm sm:text-base text-white font-semibold hover:text-[#4099D9] transition-colors">
+                <div className="contact-detail-content">
+                  <p className="contact-detail-label">Email Us</p>
+                  <a href="mailto:info@riyadsoft.com" className="contact-detail-value link-hover">
                     info@riyadsoft.com
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="w-11 h-11 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#005CC1]">
-                  <Phone className="h-5 w-5" />
+              <div className="contact-detail-row">
+                <div className="contact-detail-icon border-[#005CC1]/20 text-[#005CC1]">
+                  <Phone size={20} />
                 </div>
-                <div>
-                  <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">Call Us</p>
-                  <a href="tel:+8801996702375" className="text-sm sm:text-base text-white font-semibold hover:text-[#005CC1] transition-colors">
+                <div className="contact-detail-content">
+                  <p className="contact-detail-label">Call Us</p>
+                  <a href="tel:+8801996702375" className="contact-detail-value link-hover">
                     +880 1996 702375
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="w-11 h-11 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#00f0ff]">
-                  <MapPin className="h-5 w-5" />
+              <div className="contact-detail-row">
+                <div className="contact-detail-icon border-[#00f0ff]/20 text-[#00f0ff]">
+                  <MapPin size={20} />
                 </div>
-                <div>
-                  <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">Location</p>
-                  <p className="text-sm sm:text-base text-white font-semibold">
+                <div className="contact-detail-content">
+                  <p className="contact-detail-label">Location</p>
+                  <p className="contact-detail-value">
                     Dhaka, Bangladesh
                   </p>
                 </div>
@@ -105,35 +105,35 @@ export default function Contact() {
           </div>
 
           {/* Form Column */}
-          <div className="lg:col-span-7">
-            <div className="glass-panel p-6 sm:p-10 border-white/5 shadow-2xl relative">
+          <div className="contact-form-panel">
+            <div className="form-wrapper glass-panel">
               {success ? (
-                <div className="py-12 flex flex-col items-center justify-center text-center gap-4 animate-float">
-                  <div className="w-16 h-16 rounded-full bg-[#00f0ff]/10 border border-[#00f0ff]/20 flex items-center justify-center text-[#00f0ff] mb-2">
-                    <CheckCircle className="h-8 w-8" />
+                <div className="form-success animate-float">
+                  <div className="form-success-icon text-[#00f0ff]">
+                    <CheckCircle size={32} />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">Inquiry Received!</h3>
-                  <p className="text-xs sm:text-sm text-slate-400 font-medium max-w-sm">
+                  <h3 className="form-success-title">Inquiry Received!</h3>
+                  <p className="form-success-desc">
                     Thank you for reaching out. A software specialist from RiyadSoft will contact you via email shortly.
                   </p>
                   <button
                     onClick={() => setSuccess(false)}
-                    className="mt-6 px-6 py-2.5 bg-white/5 hover:bg-white/10 text-white text-xs font-bold uppercase tracking-wider rounded-lg border border-white/10"
+                    className="btn-reset"
                   >
                     Send Another Message
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="form-element">
                   {error && (
-                    <div className="p-4 bg-red-950/20 border border-red-500/30 rounded-xl text-red-400 text-xs font-semibold">
+                    <div className="form-error">
                       {error}
                     </div>
                   )}
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="space-y-2 flex flex-col">
-                      <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="name" className="form-label">
                         Your Name <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -143,13 +143,13 @@ export default function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="John Doe"
-                        className="px-4 py-3 bg-white/5 border border-white/10 focus:border-[#4099D9]/50 focus:ring-1 focus:ring-[#4099D9]/50 rounded-xl text-white outline-none text-sm transition-all placeholder:text-slate-600"
+                        className="form-input"
                         required
                       />
                     </div>
 
-                    <div className="space-y-2 flex flex-col">
-                      <label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                    <div className="form-group">
+                      <label htmlFor="email" className="form-label">
                         Email Address <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -159,14 +159,14 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="john@example.com"
-                        className="px-4 py-3 bg-white/5 border border-white/10 focus:border-[#4099D9]/50 focus:ring-1 focus:ring-[#4099D9]/50 rounded-xl text-white outline-none text-sm transition-all placeholder:text-slate-600"
+                        className="form-input"
                         required
                       />
                     </div>
                   </div>
 
-                  <div className="space-y-2 flex flex-col">
-                    <label htmlFor="projectType" className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                  <div className="form-group">
+                    <label htmlFor="projectType" className="form-label">
                       Project Requirement
                     </label>
                     <select
@@ -174,7 +174,7 @@ export default function Contact() {
                       name="projectType"
                       value={formData.projectType}
                       onChange={handleChange}
-                      className="px-4 py-3 bg-[#0A1021] border border-white/10 focus:border-[#4099D9]/50 rounded-xl text-white outline-none text-sm transition-all"
+                      className="form-select"
                     >
                       <option value="SaaS Product">SaaS Product (like Travel Hisab)</option>
                       <option value="Custom Web App">Custom Web Application</option>
@@ -184,8 +184,8 @@ export default function Contact() {
                     </select>
                   </div>
 
-                  <div className="space-y-2 flex flex-col">
-                    <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                  <div className="form-group">
+                    <label htmlFor="message" className="form-label">
                       Project Details <span className="text-red-500">*</span>
                     </label>
                     <textarea
@@ -195,7 +195,7 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="Describe your project, timeline, features..."
                       rows={5}
-                      className="px-4 py-3 bg-white/5 border border-white/10 focus:border-[#4099D9]/50 focus:ring-1 focus:ring-[#4099D9]/50 rounded-xl text-white outline-none text-sm transition-all resize-none placeholder:text-slate-600"
+                      className="form-textarea"
                       required
                     />
                   </div>
@@ -203,10 +203,10 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-4 bg-gradient-to-r from-[#005CC1] to-[#4099D9] disabled:opacity-50 text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-lg hover:shadow-[#005cc1]/20 transition-all duration-300 transform hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 group"
+                    className="btn-submit"
                   >
                     {loading ? "Sending..." : "Submit Inquiry"}
-                    <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <Send size={16} className="btn-submit-icon" />
                   </button>
                 </form>
               )}
